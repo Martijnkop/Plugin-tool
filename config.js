@@ -2,6 +2,8 @@ require('dotenv-flow').config()
 
 const { Client, Intents } = require('discord.js')
 
+const mariadb = require('mariadb')
+
 const client = new Client({
     intents: [Intents.FLAGS.GUILDS,
     Intents.FLAGS.GUILD_MEMBERS,
@@ -24,5 +26,14 @@ module.exports = {
     TOKEN: process.env.TOKEN,
     GUILDID: process.env.GUILDID,
     LOGCHANNELID: process.env.LOGCHANNELID,
-    client
+
+    HOST: process.env.HOST,
+    PORT: process.env.PORT,
+    USER: process.env.USER,
+    PASSWORD: process.env.PASSWORD,
+    DATABASE: process.env.DATABASE,
+    TABLEPREFIX: process.env.TABLEPREFIX,
+
+    client,
+    mariadb
 }
