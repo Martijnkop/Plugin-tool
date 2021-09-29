@@ -2,6 +2,9 @@ require('dotenv-flow').config()
 
 const { Client, Intents } = require('discord.js')
 
+const fs = require('fs');
+const Enmap = require('enmap');
+
 const mariadb = require('mariadb')
 
 const client = new Client({
@@ -34,6 +37,10 @@ module.exports = {
     DATABASE: process.env.DATABASE,
     TABLEPREFIX: process.env.TABLEPREFIX,
 
+    PREFIX: process.env.PREFIX,
+
     client,
+    fs,
+    Enmap,
     mariadb
 }
