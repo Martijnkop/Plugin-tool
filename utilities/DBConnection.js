@@ -11,13 +11,13 @@ const pool = mariadb.createPool({
 })
 
 module.exports = {
-    getConnection: function () {
+    getConnection: async function () {
         return new Promise(function (resolve, reject) {
             pool.getConnection().then(function (connection) {
                 resolve(connection);
             }).catch(function (error) {
                 reject(error);
             });
-        });
+        })
     }
 }
